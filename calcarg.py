@@ -26,15 +26,14 @@ def main():
                 m = ar
             else:
                 print("Opcion invalida")
-    
+    n = float(n)
+    m = float(m)
     print(o)
     print(n)
     print(m)
-    n = float(n)
-    m = float(m)
 
-    if o == '+' or o == '-' or o == '/' or o == '*' and n is float and m is float:
-        operacion = str(n)+ o + str(m)
+    if o == '+' or o == '-' or o == '/' or o == '*':
+        operacion = str(n)+ ' ' + o + ' ' + str(m)
         print("La operacion a resolver es: ", operacion)
         print("El resultado es", str(eval(operacion)))
 
