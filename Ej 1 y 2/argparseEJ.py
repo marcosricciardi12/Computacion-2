@@ -10,8 +10,8 @@ import argparse
 def main():
 
     parser = argparse.ArgumentParser(description="Copiar archivo")
-    parser.add_argument("-i", "--input", type=str, required=True, help="string")
-    parser.add_argument("-o", "--output", type=str, required=True, help="string")
+    parser.add_argument("-i", "--input", type=str, required=True, help="Archivo origen")
+    parser.add_argument("-o", "--output", type=str, required=True, help="Archivo destino")
     args = parser.parse_args()
 
     print('Input %s.' % args.input)
