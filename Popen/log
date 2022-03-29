@@ -1,0 +1,10 @@
+lun 28 mar 2022 22:56:59 -0: Comando ls ejecutado correctamente.
+lun 28 mar 2022 22:57:11 -0: Comando ls ejecutado correctamente.
+lun 28 mar 2022 22:58:29 -0: Comando ifconfig ejecutado correctamente.
+lun 28 mar 2022 23:03:17 -0: Comando ls ejecutado correctamente.
+lun 28 mar 2022 23:14:13 -0: Comando ls ejecutado correctamente.
+lun 28 mar 2022 23:14:26 -0: Comando ls -a / ejecutado correctamente.
+lun 28 mar 2022 23:15:53 -0 ls: no se puede acceder a '/jome': No existe el archivo o el directorio
+lun 28 mar 2022 23:16:19 -0 ls: no se puede acceder a '/joum': No existe el archivo o el directorio
+lun 28 mar 2022 23:16:43 -0 ls: no se puede acceder a '/joum': No existe el archivo o el directorio
+lun 28 mar 2022 23:17:02 -0: Comando ls -a /home ejecutado correctamente.
