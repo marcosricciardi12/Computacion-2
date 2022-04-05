@@ -22,6 +22,7 @@ import subprocess as sp
 import os
 from os import fork
 from click import command
+from numpy import number
 
 def create_and_calculate(number, verbose):
     for i in range(number):
@@ -29,13 +30,15 @@ def create_and_calculate(number, verbose):
         if fpid == 0:
             suma = 0
             pid = os.getpid()
-            ppid = os.getppid()
+            
             if verbose:
                 print("Starting process %d" % pid)
             for k in range(0, pid+1, 2):
                 suma = k + suma
+            #time.sleep(i)
             if verbose:
                 print("Ending process %d" % pid)
+            ppid = os.getppid()
             print("%d - %d : %d" % (pid, ppid, suma))
             os._exit(0)
 
@@ -46,7 +49,8 @@ def main():
     parser.add_argument("-v", "--verbose", action='store_true', help="Ejecutar programa en modo verboso")
     args = parser.parse_args()
     create_and_calculate(args.number, args.verbose)
-    os.wait()
+    for i in range(args.number):
+        os.wait()
 
 if __name__ == '__main__':
     main()
