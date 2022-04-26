@@ -19,20 +19,12 @@
 # odnuM aloH
 
 import argparse
-import sys
-import time
-import subprocess as sp
 import os
-from os import fork
-from click import command
-from numpy import number
 
 def invertline(line, r, w, r1, w1, i):
     r[i], w[i] = os.pipe()
-    print("i:%d  %d -- %d" % (i, r[i], w[i]))
     r1[i], w1[i] = os.pipe()
-    print("i:%d  %d -- %d" % (i, r1[i], w1[i]))
-    fpid = fork()
+    fpid = os.fork()
     if fpid == 0:
         os.close(w[i])
         os.close(r1[i])
