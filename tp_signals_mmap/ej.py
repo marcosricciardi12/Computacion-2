@@ -85,8 +85,9 @@ def main():
 
     #Padre
     args = 0
-    signal.pause()
-    print("Padre PID %d esperando para terminar.." % os.getpid())
+    # signal.pause()
+    # print("Padre PID %d esperando para terminar.." % os.getpid())
+    os.wait()
     os.wait() 
     print("Padre PID %d Saliendo" % os.getpid())
 
