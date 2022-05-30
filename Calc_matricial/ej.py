@@ -35,8 +35,8 @@ matrix = []
 global args
 def func_calc(linea):
     global args
-    # if len(linea)>4:
-    #     time.sleep(5)
+    if len(linea)>4:
+        time.sleep(3)
     linea_calc = []
     if args.calc == 'pot':
         for element in linea:
@@ -50,6 +50,7 @@ def func_calc(linea):
         for element in linea:
             linea_calc.append(math.log10(int(element)))
         print(linea_calc)
+    print("PID Proceso padre desde hijo: %d" % os.getppid())
     return linea_calc
 
 def main():
@@ -69,7 +70,7 @@ def main():
         print("Función no valida")
         os._exit(0)
 
-
+    print("PID Proceso padre main: %d" % os.getpid())
     with open(args.inputfile, "r") as inputfile:
         for line in inputfile:
             matrix.append(line[:-1].split(' '))
