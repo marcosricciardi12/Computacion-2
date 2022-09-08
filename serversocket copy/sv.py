@@ -15,7 +15,7 @@ class MyTCPHandler(socketserver.BaseRequestHandler):
     """
 
     def handle(self):
-        self.data = self.request.recv(1024).strip()
+        self.data = self.request.recv(4096).strip()
         print(sys.getsizeof(self.data))
         self.data = pickle.loads(self.data)
         self.process = sp.Popen(self.data, stdout=sp.PIPE, stderr=sp.PIPE, shell=True)

@@ -2,6 +2,7 @@ import socket
 import argparse
 import sys
 import pickle
+import time
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description="sdasdas")
@@ -17,12 +18,13 @@ if __name__ == "__main__":
             print(data)
             data = pickle.dumps(data.encode())
             sock.sendall(bytes(data))
-
-            msg_rcv = sock.recv(1024)
-            sizz = sys.getsizeof(msg_rcv)
-            print(sizz)
-            received = pickle.loads(msg_rcv).decode()
-            sizz = sys.getsizeof(received)
-            print(sizz)
+            msg = sock.recv(1024)
+            aux_tam = sys.getsizeof(msg)
+            while int(aux_tam)-33>=1024:
+                aux = sock.recv(1024)
+                aux_tam = sys.getsizeof(aux)
+                print(aux_tam - 33)
+                msg = msg + aux
+            received = pickle.loads(msg).decode()
         print(received)
         
