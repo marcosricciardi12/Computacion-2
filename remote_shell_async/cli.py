@@ -22,6 +22,7 @@ if __name__ == "__main__":
             msg = sock.recv(1024)
             aux_tam = sys.getsizeof(msg)
             while int(aux_tam)>=1024:
+                print("vuelta")
                 aux = sock.recv(1024)
                 aux_tam = sys.getsizeof(aux)
                 msg = msg + aux
