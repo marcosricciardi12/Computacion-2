@@ -97,7 +97,7 @@ if __name__ == "__main__":
         for add in value:
             if str(add[0]) == "AddressFamily.AF_INET":
                 print(str(add[1]))
-                procesos.append(Process(target=service4, args = (str(add[1]), args.port, args.concurrency,)))
+                lsprocesos.append(Process(target=service4, args = (str(add[1]), args.port, args.concurrency,)))
             if str(add[0]) == "AddressFamily.AF_INET6":
                 print(str(add[1]))
                 procesos.append(Process(target=service6, args = (str(add[1]), args.port, args.concurrency,)))
